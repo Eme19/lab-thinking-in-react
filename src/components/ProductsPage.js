@@ -16,26 +16,19 @@ setProducts(allProduct)
 }
 
 
-
-const filterProduct = (check) => {
-    setProductInStock(check)
-    const currentProduct = [...products]
-    
-    if (productInStock === true) {
-       currentProduct.filter((items)=> {
-        return items.productInStock 
-    
-       }
-       )
-       console.log(currentProduct)
+const filterProduct = () => {
+    if (productInStock) {
+        setProducts([...jsonData])
     } else {
-       console.log('not filtered!')
-    }
-
-   setProducts(currentProduct)
-    console.log(productInStock)
+        const filterProducts = [...jsonData].filter((items)=> {
+            return items.inStock })
+          setProducts(filterProducts)
+    } 
+    setProductInStock(!productInStock)
 }
- 
+
+
+
 
   return(
       <div>
