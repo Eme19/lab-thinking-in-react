@@ -1,20 +1,9 @@
 
 
-function SearchBar (searchHandler, filterProduct, productInStock ) {
+function SearchBar ({searchHandler, filterProduct, productInStock}) {
     
     
     
-    
-    // // const handleChange = (e) => {
-    // //     e.preventDefault();
-    // //     searchBarItem(e.target.value);
-    // // };
-    
-    // if (searchBarItem.length > 0) {
-    //     searchBarItem.filter((product) => {
-    //         return product.name.match(searchBarItem);
-    //     });
-    // }
 
     return (
         <div>

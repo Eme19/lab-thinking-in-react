@@ -15,15 +15,16 @@ setProducts(allProduct)
 
 }
 
-const filterProduct = () => {
 
+
+const filterProduct = () => {
     if (productInStock) {
         setProducts(products)
     } else {
         const filterProduct = products.filter((items) => {
             return items.productInStock
         })
-        setProducts(filterProduct)
+   setProducts(filterProduct)
     }
     setProductInStock(!productInStock)
 }
@@ -33,7 +34,7 @@ const filterProduct = () => {
         
         <h1>IronStore</h1>
         <SearchBar searchhandler={searchHandler} filterProduct={filterProduct} productInStock={productInStock}/>
-        <ProductTable />
+        <ProductTable products={products}/>
       </div>    
   )
 }
