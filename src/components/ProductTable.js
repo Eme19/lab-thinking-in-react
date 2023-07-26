@@ -1,6 +1,6 @@
 
 
-function ProductTable ({productCopy}) {
+function ProductTable ({products}) {
     
         return (
            
@@ -14,9 +14,9 @@ function ProductTable ({productCopy}) {
                     </thead>
 
                 <tbody>
-                    {productCopy.map((product) => {
+                    {products.map((product) => {
                         return (
-                   <tr key={product._id} >
+                   <tr key={product.id} >
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                             </tr>

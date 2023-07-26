@@ -8,7 +8,7 @@ function ProductsPage () {
   const [productInStock, setProductInStock] = useState(false);
 
 const searchHandler = (e) => {
-    const allProduct = products.filter((items) => {
+    const allProduct = jsonData.filter((items) => {
         return items.name.toLowerCase().includes(e.target.value.toLowerCase());
 });
 setProducts(allProduct)
@@ -17,23 +17,31 @@ setProducts(allProduct)
 
 
 
-const filterProduct = () => {
-    if (productInStock) {
-        setProducts(products)
+const filterProduct = (check) => {
+    setProductInStock(check)
+    const currentProduct = [...products]
+    
+    if (productInStock === true) {
+       currentProduct.filter((items)=> {
+        return items.productInStock 
+    
+       }
+       )
+       console.log(currentProduct)
     } else {
-        const filterProduct = products.filter((items) => {
-            return items.productInStock
-        })
-   setProducts(filterProduct)
+       console.log('not filtered!')
     }
-    setProductInStock(!productInStock)
+
+   setProducts(currentProduct)
+    console.log(productInStock)
 }
-  
+ 
+
   return(
       <div>
         
         <h1>IronStore</h1>
-        <SearchBar searchhandler={searchHandler} filterProduct={filterProduct} productInStock={productInStock}/>
+        <SearchBar searchHandler={searchHandler} filterProduct={filterProduct} productInStock={productInStock}/>
         <ProductTable products={products}/>
       </div>    
   )

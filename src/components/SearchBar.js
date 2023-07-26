@@ -12,11 +12,12 @@ function SearchBar ({searchHandler, filterProduct, productInStock}) {
             <input
            type="text"
            placeholder="Search items here"
-          onChange={(e) => searchHandler ()}
-          value={searchHandler} />
+          onChange={(e) => searchHandler (e)}
+        
+         />
 
           <div>
-            <input type="checkbox" onChange={(e) => filterProduct()}
+            <input type="checkbox" onChange={(e) => filterProduct(e.target.checked)}
              checked={productInStock}/> 
             
           </div>
