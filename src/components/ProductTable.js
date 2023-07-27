@@ -1,12 +1,16 @@
-
+import React from 'react';
+import Table from 'react-bootstrap/Table'
 
 function ProductTable ({products}) {
+
+  
     
         return (
-           
+            
             <div>
-                <table>
-                    <thead>
+               
+                <Table responsive stripped hover size="xl" className='table-style'>
+                    <thead class="thead-light">
                     <tr>
                         <th>name</th>
                         <th>price</th>
@@ -15,15 +19,21 @@ function ProductTable ({products}) {
 
                 <tbody>
                     {products.map((product) => {
-                        return (
-                   <tr key={product.id} >
+
+                 const boxStyle = {
+                 cursor: 'pointer',
+                 color: product.inStock ? 'black' : 'red' 
+                };
+
+                    return (
+               <tr style={boxStyle} key={product.id}   >
                             <td>{product.name}</td>
                             <td>{product.price}</td>
                             </tr>
                         );
                         })}
                     </tbody>
-                </table>
+                </Table>
                </div>
       
         )

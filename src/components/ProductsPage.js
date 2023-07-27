@@ -35,7 +35,7 @@ const filterProduct = () => {
         
         <h1>IronStore</h1>
         <SearchBar searchHandler={searchHandler} filterProduct={filterProduct} productInStock={productInStock}/>
-        <ProductTable products={products}/>
+        <ProductTable products={products} />
       </div>    
   )
 }
