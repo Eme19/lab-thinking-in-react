@@ -15,7 +15,7 @@ function SearchBar ({searchHandler, filterProduct, productInStock}) {
           onChange={(e) => searchHandler (e)}
         />
 
-          <div>
+          <div className='checkboxx'>
             <label className='label-style'> 
             <input className="checkbox-style" type="checkbox" 
             onChange={(e) => filterProduct(e.target.checked)}
